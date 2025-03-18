@@ -1,4 +1,30 @@
-<script setup>
+<script>
+
+
+export default {
+
+  setup () {
+
+    /*------------------
+        Menu
+    --------------------*/
+    const menu = [{
+      name: 'Accueil',
+      url: '/'
+    },
+    {
+      name: 'Contact',
+      url: '/contact'
+    }]
+
+    return {
+      menu
+    }
+
+  }
+
+}
+
 </script>
 
 <template>
@@ -81,8 +107,8 @@
         <div class="col-lg-9 col-md-9">
           <nav class="header__menu">
             <ul>
-              <li class="active"><a href="/">Accueil</a></li>
-              <li><a href="./contact.html">Contact</a></li>
+              <li v-for="item in menu" :class="$route.fullPath === item.url ? 'active' : ''"><a :href="item.url">{{
+                  item.name }}</a></li>
             </ul>
           </nav>
         </div>

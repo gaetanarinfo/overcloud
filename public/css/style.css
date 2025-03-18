@@ -32,6 +32,15 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+.main {
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.main.fade {
+	opacity: 1;
+}
+
 html,
 body {
 	height: 100%;
@@ -515,7 +524,6 @@ ol {
 	margin-bottom: 15px;
 	position: relative;
 	top: 100px;
-	opacity: 0;
 	-webkit-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
@@ -529,7 +537,6 @@ ol {
 	margin-bottom: 28px;
 	position: relative;
 	top: 100px;
-	opacity: 0;
 	-webkit-transition: all 0.6s ease-out;
 	-o-transition: all 0.6s ease-out;
 	transition: all 0.6s ease-out;
@@ -538,7 +545,6 @@ ol {
 .hero__item .hero__text .primary-btn {
 	position: relative;
 	top: 100px;
-	opacity: 0;
 	-webkit-transition: all 0.9s ease-out;
 	-o-transition: all 0.9s ease-out;
 	transition: all 0.9s ease-out;
@@ -3102,5 +3108,72 @@ ol {
 
 	.load-more .primary-btn {
 		padding: 14px 35px 12px;
+	}
+}
+
+.filter_ext {
+	display: none;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.filter_ext.fade {
+	display: block;
+	opacity: 1;
+}
+
+/* Boostrap perso */
+
+.alert-danger,
+.alert-success {
+	max-height: 58px;
+}
+
+.register__text .register__form form input.form_error {
+	border: 2px solid #d5441e !important;
+}
+
+.change__extension ul li.active {
+	background: #e5e5e5;
+}
+
+/* Loader form */
+
+.loader_form {
+	width: 175px;
+	height: 80px;
+	display: block;
+	margin: auto;
+	background-image: radial-gradient(circle 25px at 25px 25px, #ece2e2 100%, transparent 0), radial-gradient(circle 50px at 50px 50px, #ece2e2 100%, transparent 0), radial-gradient(circle 25px at 25px 25px, #ece2e2 100%, transparent 0), linear-gradient(#ece2e2 50px, transparent 0);
+	background-size: 50px 50px, 100px 76px, 50px 50px, 120px 40px;
+	background-position: 0px 30px, 37px 0px, 122px 30px, 25px 40px;
+	background-repeat: no-repeat;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.loader_form::after {
+	content: '';
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 20px;
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	border-color: #FF3D00 transparent;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
 	}
 }

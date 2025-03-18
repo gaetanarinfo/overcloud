@@ -12,25 +12,7 @@
 
 (function ($) {
 
-    /*------------------
-        Preloader
-    --------------------*/
-    $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-    });
-
     setTimeout(() => {
-
-        /*------------------
-            Background Set
-        --------------------*/
-        $('.set-bg').each(function () {
-            var bg = $(this).data('setbg');
-            $(this).css('background-image', 'url(' + bg + ')');
-            console.log(bg);
-
-        });
 
         //Canvas Menu
         $(".canvas__open").on('click', function () {
@@ -63,22 +45,6 @@
         });
 
         /*------------------
-            Carousel Slider
-        --------------------*/
-        var hero_s = $(".hero__slider");
-        hero_s.owlCarousel({
-            loop: false,
-            margin: 0,
-            items: 1,
-            dots: false,
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn',
-            smartSpeed: 1200,
-            autoHeight: false,
-            autoplay: false
-        });
-
-        /*------------------
             Testimonial Slider
         --------------------*/
         $(".testimonial__slider").owlCarousel({
@@ -102,21 +68,6 @@
             }
         });
 
-        /*------------------
-            Radio btn
-        --------------------*/
-        $(".pricing__swipe-btn label").on('click', function (e) {
-            $(".pricing__swipe-btn label").removeClass("active");
-            $(this).addClass("active");
-
-            if (e.target.htmlFor == 'month') {
-                $(".yearly__plans").removeClass('active');
-                $(".monthly__plans").addClass('active');
-            } else if (e.target.htmlFor == 'yearly') {
-                $(".monthly__plans").removeClass('active');
-                $(".yearly__plans").addClass('active');
-            }
-        });
         /*------------------
             Achieve Counter
         --------------------*/
